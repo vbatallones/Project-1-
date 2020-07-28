@@ -1,18 +1,28 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body {
+    height: 100vh;
     text-align: center;
 }
 .title {
     padding-top: 20px;
 }
-.card-container {
+.main-container {
     display: grid;
     grid-template-columns:repeat(auto-fill, minmax(100px, 1fr));
     grid-gap: 5px;
     grid-auto-flow: dense;
     margin: 0 auto;
     max-width: 800px;
+}
+.front-face {
+    /* position: absolute; */
+}
+.back-face {
+    width: 48px;
+    height: 48px;
+    position: relative;
 }

@@ -106,7 +106,7 @@ const boardDeck = [
     }
 ]
 
-const board = document.querySelector('#board')
+const board = document.querySelector('.boardGame')
 const cardContainer = document.querySelector('.card-container')
 const body = document.querySelector('body')
 let checkBoard = [];
@@ -142,34 +142,26 @@ const gameLoop = levelboards => {
     
     for (let card of levelboards) {
         // create an img element that will pass in the source and id of the object
+        const backFace = document.createElement('img')
+        backFace.classList.add('back-face')
+        backFace.src = 'https://ih1.redbubble.net/image.202165125.2731/st,small,507x507-pad,600x600,f8f8f8.u2.jpg'
         const newCard = document.createElement('img')
+        newCard.classList.add('front-face');
         newCard.src = card.src
         newCard.id = card.id
         card += newCard
-        card += newCard
         //append the image to my board
-        cardContainer.appendChild(newCard)
-        checkBoard.push(cardContainer)
+        board.appendChild(newCard)
         // duplicating my images into two, so I have 2 of each images.
-        let clonedItem = newCard.cloneNode(true)
-        cardContainer.appendChild(clonedItem)
+        let cloneCard = newCard.cloneNode(true)
+        board.appendChild(cloneCard)
+        let cloneBackFace = backFace.cloneNode(true)
+        board.appendChild(cloneBackFace)
+        board.appendChild(backFace)
         
-        clonedItem.addEventListener('click', (e) => {
-            let idImg = e.target.id
-           if (idImg === idImg) {
-               cardContainer.style.display = 'block'
-           } else {
-
-           }
-          
-        })
-        newCard.addEventListener('click', (e) => {
-           let idImg = e.target.id
-           
-       })
     }
 };
-gameLoop(levelTwoBoard())
+gameLoop(levelOneBoard())
 
 //levelOneBoard(boardDeck)
 
