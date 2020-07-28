@@ -8,3 +8,11 @@ body {
 .title {
     padding-top: 20px;
 }
+.card-container {
+    display: grid;
+    grid-template-columns:repeat(auto-fill, minmax(100px, 1fr));
+    grid-gap: 5px;
+    grid-auto-flow: dense;
+    margin: 0 auto;
+    max-width: 800px;
+}
