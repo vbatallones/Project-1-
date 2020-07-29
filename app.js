@@ -1,638 +1,73 @@
-const levelOneBoard = [
-    {
-        src: "https://img.icons8.com/color/48/000000/yoda.png",
-        matched: false,
-        id: 'Yoda'
-    },
-    // {
-    //     src: "https://img.icons8.com/color/48/000000/yoda.png",
-    //     matched: false,
-    //     id: 'Yoda'
-    // },
-    // {
-    //     src: "https://img.icons8.com/color/48/000000/chewbacca.png",
-    //     matched: false,
-    //     id: 'Chewbacca'
-    // },
-    {
-        src: "https://img.icons8.com/color/48/000000/chewbacca.png",
-        matched: false,
-        id: 'Chewbacca'
-    },
-    {
-        src: "https://img.icons8.com/color/48/000000/darth-vader.png",
-        matched: false,
-        id: 'Darth-vader'
-    },
-    // {
-    //     src: "https://img.icons8.com/color/48/000000/darth-vader.png",
-    //     matched: false,
-    //     id: 'Darth-vader'
-    // },
-    {
-        src: "https://img.icons8.com/color/48/000000/r2-d2.png",
-        matched: false,
-        id: 'R2-D2'
-    }
-    // {
-    //     src: "https://img.icons8.com/color/48/000000/r2-d2.png",
-    //     matched: false,
-    //     id: 'R2-D2'
-    // }
-]
-// const levelTwoBoard = [
-//     {
-//         src: "https://img.icons8.com/color/48/000000/yoda.png",
-//         matched: false,
-//         id: 'Yoda'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/yoda.png",
-//         matched: false,
-//         id: 'Yoda'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/chewbacca.png",
-//         matched: false,
-//         id: 'Chewbacca'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/chewbacca.png",
-//         matched: false,
-//         id: 'Chewbacca'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/darth-vader.png",
-//         matched: false,
-//         id: 'Darth-vader'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/darth-vader.png",
-//         matched: false,
-//         id: 'Darth-vader'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/r2-d2.png",
-//         matched: false,
-//         id: 'R2-D2'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/r2-d2.png",
-//         matched: false,
-//         id: 'R2-D2'
-//     },
-//     {
-//         src: "https://img.icons8.com/officel/40/000000/rebel.png",
-//         matched: false,
-//         id: 'Rebel'
-//     },
-//     {
-//         src: "https://img.icons8.com/officel/40/000000/rebel.png",
-//         matched: false,
-//         id: 'Rebel'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/luke-skywalker.png",
-//         matched: false,
-//         id: 'Luke'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/luke-skywalker.png",
-//         matched: false,
-//         id: 'Luke'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/empire.png",
-//         matched: false,
-//         id: 'Empire'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/empire.png",
-//         matched: false,
-//         id: 'Empire'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/c-3po.png",
-//         matched: false,
-//         id: 'C-3PO'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/c-3po.png",
-//         matched: false,
-//         id: 'C-3PO'
-//     }
-// ]
-// const levelThreeBoard = [
-//     {
-//         src: "https://img.icons8.com/color/48/000000/yoda.png",
-//         matched: false,
-//         id: 'Yoda'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/yoda.png",
-//         matched: false,
-//         id: 'Yoda'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/chewbacca.png",
-//         matched: false,
-//         id: 'Chewbacca'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/chewbacca.png",
-//         matched: false,
-//         id: 'Chewbacca'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/darth-vader.png",
-//         matched: false,
-//         id: 'Darth-vader'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/darth-vader.png",
-//         matched: false,
-//         id: 'Darth-vader'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/r2-d2.png",
-//         matched: false,
-//         id: 'R2-D2'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/r2-d2.png",
-//         matched: false,
-//         id: 'R2-D2'
-//     },
-//     {
-//         src: "https://img.icons8.com/office/40/000000/rebel.png",
-//         matched: false,
-//         id: 'Rebel'
-//     },
-//     {
-//         src: "https://img.icons8.com/office/40/000000/rebel.png",
-//         matched: false,
-//         id: 'Rebel'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/luke-skywalker.png",
-//         matched: false,
-//         id: 'Luke'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/luke-skywalker.png",
-//         matched: false,
-//         id: 'Luke'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/empire.png",
-//         matched: false,
-//         id: 'Empire'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/empire.png",
-//         matched: false,
-//         id: 'Empire'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/c-3po.png",
-//         matched: false,
-//         id: 'C-3PO'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/c-3po.png",
-//         matched: false,
-//         id: 'C-3PO'
-//     },
-//     {
-//         src: "https://img.icons8.com/officel/40/000000/walter-white.png",
-//         matched: false,
-//         id: 'MrWhite'
-//     },
-//     {
-//         src: "https://img.icons8.com/officel/40/000000/walter-white.png",
-//         matched: false,
-//         id: 'MrWhite'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/jigglypuff.png",
-//         matched: false,
-//         id: 'JigglyPuff'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/jigglypuff.png",
-//         matched: false,
-//         id: 'JigglyPuff'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/bullbasaur.png",
-//         matched: false,
-//         id: 'Bulba'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/bullbasaur.png",
-//         matched: false,
-//         id: 'Bulba'
-//     },
-//     {
-//         src: "https://img.icons8.com/fluent/48/000000/source-code.png",
-//         matched: false,
-//         id: 'Source-code'
-//     },
-//     {
-//         src: "https://img.icons8.com/fluent/48/000000/source-code.png",
-//         matched: false,
-//         id: 'Source-code'
-//     }
-// ]
-// const levelFourBoard = [
-//     {
-//         src: "https://img.icons8.com/color/48/000000/api.png",
-//         matched: false,
-//         id: 'API'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/api.png",
-//         matched: false,
-//         id: 'API'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/system-task.png",
-//         matched: false,
-//         id: 'Task'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/system-task.png",
-//         matched: false,
-//         id: 'Task'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/melting-hert.png",
-//         matched: false,
-//         id: 'Melting'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/melting-hert.png",
-//         matched: false,
-//         id: 'Melting'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/r2-d2.png",
-//         matched: false,
-//         id: 'R2-D2'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/r2-d2.png",
-//         matched: false,
-//         id: 'R2-D2'
-//     },
-//     {
-//         src: "https://img.icons8.com/office/16/000000/rebel.png",
-//         matched: false,
-//         id: 'Rebel'
-//     },
-//     {
-//         src: "https://img.icons8.com/office/16/000000/rebel.png",
-//         matched: false,
-//         id: 'Rebel'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/luke-skywalker.png",
-//         matched: false,
-//         id: 'Luke'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/luke-skywalker.png",
-//         matched: false,
-//         id: 'Luke'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/empire.png",
-//         matched: false,
-//         id: 'Empire'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/empire.png",
-//         matched: false,
-//         id: 'Empire'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/c-3po.png",
-//         matched: false,
-//         id: 'C-3PO'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/c-3po.png",
-//         matched: false,
-//         id: 'C-3PO'
-//     },
-//     {
-//         src: "https://img.icons8.com/officel/40/000000/walter-white.png",
-//         matched: false,
-//         id: 'MrWhite'
-//     },
-//     {
-//         src: "https://img.icons8.com/officel/40/000000/walter-white.png",
-//         matched: false,
-//         id: 'MrWhite'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/jigglypuff.png",
-//         matched: false,
-//         id: 'JigglyPuff'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/jigglypuff.png",
-//         matched: false,
-//         id: 'JigglyPuff'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/bullbasaur.png",
-//         matched: false,
-//         id: 'Bulba'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/bullbasaur.png",
-//         matched: false,
-//         id: 'Bulba'
-//     },
-//     {
-//         src: "https://img.icons8.com/fluent/48/000000/source-code.png",
-//         matched: false,
-//         id: 'Source-code'
-//     },
-//     {
-//         src: "https://img.icons8.com/fluent/48/000000/source-code.png",
-//         matched: false,
-//         id: 'Source-code'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/virus-free.png",
-//         matched: false,
-//         id: 'Virus'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/virus-free.png",
-//         matched: false,
-//         id: 'Virus'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/yoda.png",
-//         matched: false,
-//         id: 'Yoda'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/yoda.png",
-//         matched: false,
-//         id: 'Yoda'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/chewbacca.png",
-//         matched: false,
-//         id: 'Chewbacca'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/chewbacca.png",
-//         matched: false,
-//         id: 'Chewbacca'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/darth-vader.png",
-//         matched: false,
-//         id: 'Darth-vader'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/darth-vader.png",
-//         matched: false,
-//         id: 'Darth-vader'
-//     }
-// ]
-// const levelFiveBoard = [
-//     {
-//         src: "https://img.icons8.com/color/48/000000/api.png",
-//         matched: false,
-//         id: 'API'
-//     },
-    {
-        src: "https://img.icons8.com/color/48/000000/api.png",
-        matched: false,
-        id: 'API'
-    },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/system-task.png",
-//         matched: false,
-//         id: 'Task'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/system-task.png",
-//         matched: false,
-//         id: 'Task'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/melting-hert.png",
-//         matched: false,
-//         id: 'Melting'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/melting-hert.png",
-//         matched: false,
-//         id: 'Melting'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/r2-d2.png",
-//         matched: false,
-//         id: 'R2-D2'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/r2-d2.png",
-//         matched: false,
-//         id: 'R2-D2'
-//     },
-//     {
-//         src: "https://img.icons8.com/office/40/000000/rebel.png",
-//         matched: false,
-//         id: 'Rebel'
-//     },
-    // {
-    //     src: "https://img.icons8.com/office/40/000000/rebel.png",
-    //     matched: false,
-    //     id: 'Rebel'
-    // },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/luke-skywalker.png",
-//         matched: false,
-//         id: 'Luke'
-//     },
-    // {
-    //     src: "https://img.icons8.com/color/48/000000/luke-skywalker.png",
-    //     matched: false,
-    //     id: 'Luke'
-    // },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/empire.png",
-//         matched: false,
-//         id: 'Empire'
-//     },
-    // {
-    //     src: "https://img.icons8.com/color/48/000000/empire.png",
-    //     matched: false,
-    //     id: 'Empire'
-    // },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/c-3po.png",
-//         matched: false,
-//         id: 'C-3PO'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/c-3po.png",
-//         matched: false,
-//         id: 'C-3PO'
-//     },
-//     {
-//         src: "https://img.icons8.com/officel/40/000000/walter-white.png",
-//         matched: false,
-//         id: 'MrWhite'
-//     },
-    // {
-    //     src: "https://img.icons8.com/officel/40/000000/walter-white.png",
-    //     matched: false,
-    //     id: 'MrWhite'
-    // },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/jigglypuff.png",
-//         matched: false,
-//         id: 'JigglyPuff'
-//     },
-    // {
-    //     src: "https://img.icons8.com/color/48/000000/jigglypuff.png",
-    //     matched: false,
-    //     id: 'JigglyPuff'
-    // },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/bullbasaur.png",
-//         matched: false,
-//         id: 'Bulba'
-//     },
-    // {
-    //     src: "https://img.icons8.com/color/48/000000/bullbasaur.png",
-    //     matched: false,
-    //     id: 'Bulba'
-    // },
-//     {
-//         src: "https://img.icons8.com/fluent/48/000000/source-code.png",
-//         matched: false,
-//         id: 'Source-code'
-//     },
-//     {
-//         src: "https://img.icons8.com/fluent/48/000000/source-code.png",
-//         matched: false,
-//         id: 'Source-code'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/virus-free.png",
-//         matched: false,
-//         id: 'Virus'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/virus-free.png",
-//         matched: false,
-//         id: 'Virus'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/yoda.png",
-//         matched: false,
-//         id: 'Yoda'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/yoda.png",
-//         matched: false,
-//         id: 'Yoda'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/chewbacca.png",
-//         matched: false,
-//         id: 'Chewbacca'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/chewbacca.png",
-//         matched: false,
-//         id: 'Chewbacca'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/darth-vader.png",
-//         matched: false,
-//         id: 'Darth-vader'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/darth-vader.png",
-//         matched: false,
-//         id: 'Darth-vader'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/pinball.png",
-//         matched: false,
-//         id: 'Pinball'
-//     },
-    // {
-    //     src: "https://img.icons8.com/color/48/000000/pinball.png",
-    //     matched: false,
-    //     id: 'Pinball'
-    // },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/animation.png",
-//         matched: false,
-//         id: 'Mickey'
-//     },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/mario.png",
-//         matched: false,
-//         id: 'Mario'
-//     },
-    // {
-    //     src: "https://img.icons8.com/color/48/000000/mario.png",
-    //     matched: false,
-    //     id: 'Mario'
-    // },
-//     {
-//         src: "https://img.icons8.com/color/48/000000/sonic-the-hedgehog-1.png",
-//         matched: false,
-//         id: 'Sonic'
-//     },
-    // {
-    //     src: "https://img.icons8.com/color/48/000000/sonic-the-hedgehog-1.png",
-    //     matched: false,
-    //     id: 'Sonic'
-    // },
-    // {
-    //     src: "https://img.icons8.com/color/48/000000/animation.png",
-    //     matched: false,
-    //     id: 'Mickey'
-    // }
-// ]
-const board = document.querySelector('#board')
-const body = document.querySelector('body')
-let checkBoard = [];
+const card = document.querySelectorAll('.memory-game');
+const timer = document.querySelector('.countdown');
 
-const gameLoop = cardsArray => {
-    
-    
-    for (let cards of cardsArray) {
-        const newCard = document.createElement('img')
-        newCard.src = cardsArray.src
-        newCard.id = cardsArray.id
-        cardsArray.id += newCard.id
-        cardsArray.src += newCard
-        board.appendChild(newCard)
-        checkBoard.push(board)
-    //     newCard.addEventListener('click', (e) => {
-    //         let imgId = e.target.id
-    //         checkBoard.push(imgId);
-    //         console.log(checkBoard)
-    //     })
-    }
+let isWaiting = false;
+let isRunning = false;
+let countdownTimer;
+let finalCountdown = false;
+let seconds = 120;
+let hasMatch = false;
+let lockCard = false;
+let firstCard;
+let secondCard;
 
+function flipCard () {
+    
+   this.classList.add('flip')
+   if(!hasMatch) {
+       hasMatch = true;
+       firstCard = this;
+       countdownTimer = setInterval(gameTime, 1000);
+   } else {
+       hasMatch = false;
+       secondCard = this;
+
+       checkMacth()
+    }
 }
+function checkMacth () {
+    
+    if (firstCard.dataset.name === secondCard.dataset.name) {
+        firstCard.removeEventListener('click', flipCard)
+        secondCard.removeEventListener('click', flipCard)
+    } else {
+        setTimeout(() => {
+            firstCard.classList.remove('flip')
+            secondCard.classList.remove('flip')
+        }, 500)
+    }  
+}
+function gameTime () {
+    let minutes = Math.round((seconds - 30) / 60);
+    let remainingSeconds = seconds % 60;
+    if (remainingSeconds < 10) {
+        remainingSeconds = "0" + remainingSeconds;
+    }
+    document.querySelector('.counter').innerHTML = minutes + ":" + remainingSeconds;
+    if (seconds == 0) {
+       function timeIsUp () {
 
-gameLoop(levelOneBoard)
+       }
+        if (finalCountdown) {
+            clearInterval(countdownTimer); 
+        } else {
+            finalCountdown = true; 
+        }
+    } else {
+        isWaiting = true;
+        seconds--;
+    }
+}
+// SELF INVOKING FUNCTION  we wrap the whole "(function nameOfFunction (){Bunch of code...})();" <-- important
+//this function right here will automatically execute before we event click a card.
+(function shuffleCard () {
+    card.forEach(cards => {
+        let randomCard = Math.floor(Math.random() * 24)
+        // the order in the code right here is telling that the order of the
+        // card is 1,2,3,4,5,6 since we have the variable randomCard it will give us the random numbers
+        cards.style.order = randomCard
+    })
+})();
 
 
-
+card.forEach(cards => cards.addEventListener('click', flipCard))
