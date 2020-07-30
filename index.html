@@ -3,116 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
     <title>Memory Game</title>
 </head>
 <body>
+<div class="container">
     <h1 class="title">Trip Down To Memory Lane</h1>
-    <div class="countdown">Time:<span class="counter"></span></div>
-    <div class="players">
-        <div class="playerOne">Player 1:</div>
-        <div class="playerTwo">Player 2:</div>
+        <button class="insButton" data-modal-target="#modal">INSTRUCTIONS</button>
+    <div class="modal" id="modal">
+        <div class="modal-header">
+            <div class="title-header">How To Play Memory Lane</div>
+            <button data-close-button class="close">&times;</button>
+        </div>
+        <div class="modal-body">
+            <ul>
+                <li>Click any card to start the game.</li>
+                <li>Find the pair of the first image.</li>
+                <li>If not the same image you flip, "Ops Try Again".</li>
+            </ul>
+        </div>
     </div>
+    <span class="countdown">Timer: 00:00</span>
+    <span class="move-counter">0</span> <span class="moves">Moves</span>
     <section class="board-container">
         <div class="memory-game"  data-name="Yoda">
             <img class="front-face" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1dbc1935-6542-4ee3-822f-135cff4ba62c/ddtclqs-b4e152f2-403a-40d6-948c-0871dda66d3e.png/v1/fill/w_670,h_804,strp/baby_yoda___transparent__by_camo_flauge_ddtclqs-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD04MDQiLCJwYXRoIjoiXC9mXC8xZGJjMTkzNS02NTQyLTRlZTMtODIyZi0xMzVjZmY0YmE2MmNcL2RkdGNscXMtYjRlMTUyZjItNDAzYS00MGQ2LTk0OGMtMDg3MWRkYTY2ZDNlLnBuZyIsIndpZHRoIjoiPD02NzAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.Wf3GAdMZXwKJKh84QvarW34CXLqdWqrIebAjWNzo8hg" alt="">
-            <img class="back-face card-back-flip" src="https://ih1.redbubble.net/image.202165125.2731/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt="">
+            <img class="back-face card-back-flip" src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/9142/thumb_CMYK-Red_Small_GeneralAssembly-Cog.png" alt="">
         </div>
         <div class="memory-game" data-name="Yoda">
             <img class="front-face" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1dbc1935-6542-4ee3-822f-135cff4ba62c/ddtclqs-b4e152f2-403a-40d6-948c-0871dda66d3e.png/v1/fill/w_670,h_804,strp/baby_yoda___transparent__by_camo_flauge_ddtclqs-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD04MDQiLCJwYXRoIjoiXC9mXC8xZGJjMTkzNS02NTQyLTRlZTMtODIyZi0xMzVjZmY0YmE2MmNcL2RkdGNscXMtYjRlMTUyZjItNDAzYS00MGQ2LTk0OGMtMDg3MWRkYTY2ZDNlLnBuZyIsIndpZHRoIjoiPD02NzAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.Wf3GAdMZXwKJKh84QvarW34CXLqdWqrIebAjWNzo8hg" alt="">
-            <img class="back-face card-back-flip" src="https://ih1.redbubble.net/image.202165125.2731/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt="">
+            <img class="back-face card-back-flip" src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/9142/thumb_CMYK-Red_Small_GeneralAssembly-Cog.png" alt="">
         </div>
         <div class="memory-game" data-name="chewbacca">
             <img class="front-face" src="https://img.icons8.com/color/96/000000/chewbacca.png" alt="">
-            <img class="back-face card-back-flip" src="https://ih1.redbubble.net/image.202165125.2731/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt=""> 
+            <img class="back-face card-back-flip" src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/9142/thumb_CMYK-Red_Small_GeneralAssembly-Cog.png" alt=""> 
         </div>
         <div class="memory-game" data-name="chewbacca">
             <img class="front-face" src="https://img.icons8.com/color/96/000000/chewbacca.png" alt="">
-            <img class="back-face card-back-flip" src="https://ih1.redbubble.net/image.202165125.2731/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt=""> 
+            <img class="back-face card-back-flip" src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/9142/thumb_CMYK-Red_Small_GeneralAssembly-Cog.png" alt=""> 
         </div>
         <div class="memory-game" data-name="darth-vader">
             <img class="front-face" src="https://purepng.com/public/uploads/medium/purepng.com-darth-vaderdarth-vaderanakin-skywalkerstar-wars-franchiseskywalker-1701527754544zuvib.png" alt="">
-            <img class="back-face card-back-flip" src="https://ih1.redbubble.net/image.202165125.2731/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt=""> 
+            <img class="back-face card-back-flip" src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/9142/thumb_CMYK-Red_Small_GeneralAssembly-Cog.png" alt=""> 
         </div>
         <div class="memory-game" data-name="darth-vader">
             <img class="front-face" src="https://purepng.com/public/uploads/medium/purepng.com-darth-vaderdarth-vaderanakin-skywalkerstar-wars-franchiseskywalker-1701527754544zuvib.png" alt="">
-            <img class="back-face card-back-flip" src="https://ih1.redbubble.net/image.202165125.2731/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt=""> 
+            <img class="back-face card-back-flip" src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/9142/thumb_CMYK-Red_Small_GeneralAssembly-Cog.png" alt=""> 
         </div>
         <div class="memory-game" data-name="sonic">
             <img class="front-face" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a13063d6-9ba9-4de4-b9df-c1dbf425276b/dbis11e-8317790f-45f6-41fe-a06c-cff5b3b0d533.png/v1/fill/w_1600,h_1430,strp/sonic_transparent_2_0_by_nerdword_dbis11e-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0xNDMwIiwicGF0aCI6IlwvZlwvYTEzMDYzZDYtOWJhOS00ZGU0LWI5ZGYtYzFkYmY0MjUyNzZiXC9kYmlzMTFlLTgzMTc3OTBmLTQ1ZjYtNDFmZS1hMDZjLWNmZjViM2IwZDUzMy5wbmciLCJ3aWR0aCI6Ijw9MTYwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.b8ThfnxIJSZ5BwFW6UBun6Wkw8xSKnfNMK7IUw1DweY" alt="">
-            <img class="back-face card-back-flip" src="https://ih1.redbubble.net/image.202165125.2731/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt=""> 
+            <img class="back-face card-back-flip" src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/9142/thumb_CMYK-Red_Small_GeneralAssembly-Cog.png" alt=""> 
         </div>
         <div class="memory-game" data-name="sonic">
             <img class="front-face" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a13063d6-9ba9-4de4-b9df-c1dbf425276b/dbis11e-8317790f-45f6-41fe-a06c-cff5b3b0d533.png/v1/fill/w_1600,h_1430,strp/sonic_transparent_2_0_by_nerdword_dbis11e-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0xNDMwIiwicGF0aCI6IlwvZlwvYTEzMDYzZDYtOWJhOS00ZGU0LWI5ZGYtYzFkYmY0MjUyNzZiXC9kYmlzMTFlLTgzMTc3OTBmLTQ1ZjYtNDFmZS1hMDZjLWNmZjViM2IwZDUzMy5wbmciLCJ3aWR0aCI6Ijw9MTYwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.b8ThfnxIJSZ5BwFW6UBun6Wkw8xSKnfNMK7IUw1DweY" alt="">
-            <img class="back-face card-back-flip" src="https://ih1.redbubble.net/image.202165125.2731/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt=""> 
+            <img class="back-face card-back-flip" src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/9142/thumb_CMYK-Red_Small_GeneralAssembly-Cog.png" alt=""> 
         </div>
         <div class="memory-game" data-name="zombies">
             <img class="front-face" src="https://pluspng.com/img-png/plants-vs-zombies-png-image-regular-zombie-png-plants-vs-zombies-wiki-fandom-powered-by-wikia-363.png" alt="">
-            <img class="back-face card-back-flip" src="https://ih1.redbubble.net/image.202165125.2731/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt=""> 
+            <img class="back-face card-back-flip" src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/9142/thumb_CMYK-Red_Small_GeneralAssembly-Cog.png" alt=""> 
         </div>
         <div class="memory-game" data-name="zombies">
             <img class="front-face" src="https://pluspng.com/img-png/plants-vs-zombies-png-image-regular-zombie-png-plants-vs-zombies-wiki-fandom-powered-by-wikia-363.png" alt="">
-            <img class="back-face card-back-flip" src="https://ih1.redbubble.net/image.202165125.2731/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt=""> 
+            <img class="back-face card-back-flip" src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/9142/thumb_CMYK-Red_Small_GeneralAssembly-Cog.png" alt=""> 
         </div>
         <div class="memory-game" data-name="bulba">
             <img class="front-face" src="https://img.icons8.com/color/96/000000/bullbasaur.png" alt="">
-            <img class="back-face card-back-flip" src="https://ih1.redbubble.net/image.202165125.2731/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt=""> 
+            <img class="back-face card-back-flip" src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/9142/thumb_CMYK-Red_Small_GeneralAssembly-Cog.png" alt=""> 
         </div>
         <div class="memory-game" data-name="bulba">
             <img class="front-face" src="https://img.icons8.com/color/96/000000/bullbasaur.png" alt="">
-            <img class="back-face card-back-flip" src="https://ih1.redbubble.net/image.202165125.2731/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt=""> 
+            <img class="back-face card-back-flip" src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/9142/thumb_CMYK-Red_Small_GeneralAssembly-Cog.png" alt=""> 
         </div>
         <div class="memory-game" data-name="MrWhite">
             <img class="front-face" src="https://img.icons8.com/officel/160/000000/walter-white.png" alt="">
-            <img class="back-face card-back-flip" src="https://ih1.redbubble.net/image.202165125.2731/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt=""> 
+            <img class="back-face card-back-flip" src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/9142/thumb_CMYK-Red_Small_GeneralAssembly-Cog.png" alt=""> 
         </div>
         <div class="memory-game" data-name="MrWhite">
             <img class="front-face" src="https://img.icons8.com/officel/160/000000/walter-white.png" alt="">
-            <img class="back-face card-back-flip" src="https://ih1.redbubble.net/image.202165125.2731/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt=""> 
+            <img class="back-face card-back-flip" src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/9142/thumb_CMYK-Red_Small_GeneralAssembly-Cog.png" alt=""> 
         </div>
         <div class="memory-game" data-name="popeye">
             <img class="front-face" src="https://img.icons8.com/officel/160/000000/popeye.png" alt="">
-            <img class="back-face card-back-flip" src="https://ih1.redbubble.net/image.202165125.2731/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt=""> 
+            <img class="back-face card-back-flip" src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/9142/thumb_CMYK-Red_Small_GeneralAssembly-Cog.png" alt=""> 
         </div>
         <div class="memory-game" data-name="popeye">
             <img class="front-face" src="https://img.icons8.com/officel/160/000000/popeye.png" alt="">
-            <img class="back-face card-back-flip" src="https://ih1.redbubble.net/image.202165125.2731/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt=""> 
+            <img class="back-face card-back-flip" src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/9142/thumb_CMYK-Red_Small_GeneralAssembly-Cog.png" alt=""> 
         </div>
         <div class="memory-game" data-name="olive">
             <img class="front-face" src="https://img.icons8.com/office/160/000000/olive-oyl.png" alt="">
-            <img class="back-face card-back-flip" src="https://ih1.redbubble.net/image.202165125.2731/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt=""> 
+            <img class="back-face card-back-flip" src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/9142/thumb_CMYK-Red_Small_GeneralAssembly-Cog.png" alt=""> 
         </div>
         <div class="memory-game" data-name="olive">
             <img class="front-face" src="https://img.icons8.com/office/160/000000/olive-oyl.png" alt="">
-            <img class="back-face card-back-flip" src="https://ih1.redbubble.net/image.202165125.2731/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt=""> 
+            <img class="back-face card-back-flip" src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/9142/thumb_CMYK-Red_Small_GeneralAssembly-Cog.png" alt=""> 
         </div>
         <div class="memory-game" data-name="finn">
             <img class="front-face" src="https://img.icons8.com/color/96/000000/finn.png" alt="">
-            <img class="back-face card-back-flip" src="https://ih1.redbubble.net/image.202165125.2731/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt=""> 
+            <img class="back-face card-back-flip" src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/9142/thumb_CMYK-Red_Small_GeneralAssembly-Cog.png" alt=""> 
         </div>
         <div class="memory-game" data-name="finn">
             <img class="front-face" src="https://img.icons8.com/color/96/000000/finn.png" alt="">
-            <img class="back-face card-back-flip" src="https://ih1.redbubble.net/image.202165125.2731/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt=""> 
+            <img class="back-face card-back-flip" src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/9142/thumb_CMYK-Red_Small_GeneralAssembly-Cog.png" alt=""> 
         </div>
         <div class="memory-game" data-name="jake">
             <img class="front-face" src="https://img.icons8.com/plasticine/100/000000/jake.png" alt="">
-            <img class="back-face card-back-flip" src="https://ih1.redbubble.net/image.202165125.2731/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt=""> 
+            <img class="back-face card-back-flip" src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/9142/thumb_CMYK-Red_Small_GeneralAssembly-Cog.png" alt=""> 
         </div>
         <div class="memory-game" data-name="jake">
             <img class="front-face" src="https://img.icons8.com/plasticine/100/000000/jake.png" alt="">
-            <img class="back-face card-back-flip" src="https://ih1.redbubble.net/image.202165125.2731/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt=""> 
+            <img class="back-face card-back-flip" src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/9142/thumb_CMYK-Red_Small_GeneralAssembly-Cog.png" alt=""> 
         </div>
         <div class="memory-game" data-name="snitch">
             <img class="front-face" src="https://img.icons8.com/color/96/000000/snitch.png" alt="">
-            <img class="back-face card-back-flip" src="https://ih1.redbubble.net/image.202165125.2731/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt=""> 
+            <img class="back-face card-back-flip" src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/9142/thumb_CMYK-Red_Small_GeneralAssembly-Cog.png" alt=""> 
         </div>
         <div class="memory-game" data-name="snitch">
             <img class="front-face" src="https://img.icons8.com/color/96/000000/snitch.png" alt="">
-            <img class="back-face card-back-flip" src="https://ih1.redbubble.net/image.202165125.2731/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt=""> 
+            <img class="back-face card-back-flip" src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/9142/thumb_CMYK-Red_Small_GeneralAssembly-Cog.png" alt=""> 
         </div>
     </section>
-
+    <div class="modal-content" id="modal-content">
+        <div class="modal-body-two">
+            <span class="closeButt">&times;</span>
+            <h2>You did it!!</h2>
+            <p>MEMORY YEET!</p>
+            <button class="play-again">Play Again?</button>
+        </div>
+    </div>
+    <div id="overlay"></div>
     <!-- <script src="./script.js"></script> -->
     <script src="./app.js"></script>
 </body>
