@@ -1,3 +1,6 @@
+const themeSong = new Audio();
+themeSong.src = "assets/themeSong.mp3";
+
 const card = document.querySelectorAll('.memory-game');
 const timer = document.querySelector('.countdown');
 const openModalButtons = document.querySelectorAll('[data-modal-target]');
@@ -70,6 +73,7 @@ function resetEverything() {
 }
 // as soon as you click the board the time will start
 boardContainer.addEventListener('click', function(e) {
+    themeSong.play();
     if(timeStart === false) {
         timeStart = true;
         gameTimer();
@@ -102,7 +106,9 @@ function gameTimer() {
 	}, 1000);
 }
 function stopTime() {
-	clearInterval(time);
+    clearInterval(time);
+    themeSong.pause();
+    themeSong.currentTime = 10;
 }
 // counting my moves every 2 cards that's been click
 function movesCount () {
@@ -169,3 +175,4 @@ playAgain.addEventListener('click', function() {
     window.location.reload()
 });
 card.forEach(cards => cards.addEventListener('click', flipCard))
+
