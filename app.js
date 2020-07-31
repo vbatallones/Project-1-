@@ -21,7 +21,7 @@ let firstCard;
 let secondCard;
 let mactchCard = [];
 
-//INSTRUCTIONS
+//INSTRUCTIONS MODAL
 openModalButtons.forEach(button => {
     button.addEventListener('click', () => {
         const openButton = document.querySelector(button.dataset.modalTarget)
@@ -71,6 +71,28 @@ function resetEverything() {
 	moves = 0;
     movesCount.innerHTML = 0;
 }
+function gameTimer() {
+    // Update the count every 1 second
+	time = setInterval(function() {
+        seconds++;
+        if (seconds === 60) {
+            minutes++;
+            seconds = 0;
+        }
+		// Update the timer in HTML with the time it takes the user to play the game
+		timer.innerHTML =  " Timer: " + minutes + " Mins " + seconds + " Secs" ;
+	}, 1000);
+}
+function stopTime() {
+    clearInterval(time);
+    themeSong.pause();
+    themeSong.currentTime = 10;
+}
+// counting my moves every 2 cards that's been click
+function movesCount () {
+    moveCount.innerHTML++
+    moves++
+}
 // as soon as you click the board the time will start
 boardContainer.addEventListener('click', function(e) {
     themeSong.play();
@@ -92,46 +114,6 @@ function flipCard () {
         
         checkMatch()
     }
-}
-function gameTimer() {
-	// Update the count every 1 second
-	time = setInterval(function() {
-		seconds++;
-			if (seconds === 60) {
-				minutes++;
-				seconds = 0;
-			}
-		// Update the timer in HTML with the time it takes the user to play the game
-		timer.innerHTML =  " Timer: " + minutes + " Mins " + seconds + " Secs" ;
-	}, 1000);
-}
-function stopTime() {
-    clearInterval(time);
-    themeSong.pause();
-    themeSong.currentTime = 10;
-}
-// counting my moves every 2 cards that's been click
-function movesCount () {
-    moveCount.innerHTML++
-    moves++
-}
-//check the if the card it matching
-function checkMatch () {
-    if (firstCard.dataset.name === secondCard.dataset.name) {
-        firstCard.removeEventListener('click', flipCard)
-        secondCard.removeEventListener('click', flipCard)
-        mactchCard.push(firstCard)
-        mactchCard.push(secondCard)
-        winGame()
-        movesCount()
-       
-    } else {
-        setTimeout(() => {
-            firstCard.classList.remove('flip')
-            secondCard.classList.remove('flip')
-        }, 500)
-        movesCount()
-    }  
 }
 function gameStats() {
 	const stats = document.querySelector(".modal-body-two");
@@ -156,6 +138,24 @@ function displayWinningModal() {
         modalClose.onclick = function() {
             modalWinner.style.display = "none";
         }
+}
+//check the if the card it matching
+function checkMatch () {
+    if (firstCard.dataset.name === secondCard.dataset.name) {
+        firstCard.removeEventListener('click', flipCard)
+        secondCard.removeEventListener('click', flipCard)
+        mactchCard.push(firstCard)
+        mactchCard.push(secondCard)
+        winGame()
+        movesCount()
+       
+    } else {
+        setTimeout(() => {
+            firstCard.classList.remove('flip')
+            secondCard.classList.remove('flip')
+        }, 500)
+        movesCount()
+    }  
 }
 // not working either
 function winGame() {
